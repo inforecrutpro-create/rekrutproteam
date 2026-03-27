@@ -32,6 +32,23 @@ header h1 {
   letter-spacing: 2px;
 }
 
+nav ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+nav ul li {
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: #facc15;
+  font-weight: bold;
+}
+
 /* ===== Банер ===== */
 .hero {
   background: url("https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg") center/cover no-repeat;
@@ -103,7 +120,7 @@ header h1 {
   background: #eab308;
 }
 
-/* ===== Popup ===== */
+/* ===== POPUP ===== */
 #popup {
   display: none;
   position: fixed;
@@ -169,7 +186,6 @@ footer a {
   color: #facc15;
   margin: 0 10px;
 }
-
 </style>
 </head>
 
@@ -177,38 +193,59 @@ footer a {
 
 <header>
   <h1>RekrutPro</h1>
+  <nav>
+    <ul>
+      <li><a href="#home">Головна</a></li>
+      <li><a href="#about">Про нас</a></li>
+      <li><a href="#services">Послуги</a></li>
+      <li><a href="#contact">Контакти</a></li>
+    </ul>
+  </nav>
 </header>
 
-<div class="hero">
+<div id="home" class="hero">
   Професійний рекрутинг та підбір персоналу
 </div>
 
-<div class="section">
-  <h2>Наші послуги</h2>
+<div id="about" class="section">
+  <h2>Про нас</h2>
+  <p>Команда RekrutPro має багаторічний досвід у рекрутингу та підборі персоналу. Ми допомагаємо бізнесу знаходити талановитих фахівців та оптимізувати HR-процеси.</p>
+</div>
 
+<div id="services" class="section">
+  <h2>Наші послуги</h2>
   <div class="services">
     <div class="card">
       <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg" alt="Пошук персоналу">
       <h3>Пошук персоналу</h3>
       <button onclick="openPopup()">Замовити консультацію</button>
     </div>
-
     <div class="card">
       <img src="https://images.pexels.com/photos/1181615/pexels-photo-1181615.jpeg" alt="IT рекрутинг">
       <h3>IT рекрутинг</h3>
       <button onclick="openPopup()">Замовити консультацію</button>
     </div>
-
     <div class="card">
       <img src="https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg" alt="Аутсорсинг HR">
       <h3>Аутсорсинг HR</h3>
       <button onclick="openPopup()">Замовити консультацію</button>
     </div>
-
+    <div class="card">
+      <img src="https://images.pexels.com/photos/3184468/pexels-photo-3184468.jpeg" alt="Консультації">
+      <h3>HR Консультації</h3>
+      <button onclick="openPopup()">Замовити консультацію</button>
+    </div>
   </div>
 </div>
 
-<!-- POPUP ФОРМА -->
+<div id="contact" class="section">
+  <h2>Контакти</h2>
+  <p>Email: <a href="mailto:your@email.com">your@email.com</a></p>
+  <p>Телефон: <a href="tel:063896548">063896548</a></p>
+  <p>Facebook: <a href="https://facebook.com/yourpage" target="_blank">facebook.com/yourpage</a></p>
+</div>
+
+<!-- POPUP -->
 <div id="popup">
   <div class="popup-box">
     <span onclick="closePopup()">×</span>
@@ -224,6 +261,7 @@ footer a {
 <footer>
   <p>&copy; 2026 RekrutPro</p>
   <a href="mailto:your@email.com">Email</a>
+  <a href="tel:063896548">Телефон</a>
   <a href="https://facebook.com/yourpage" target="_blank">Facebook</a>
 </footer>
 
@@ -231,7 +269,6 @@ footer a {
 function openPopup() {
   document.getElementById("popup").style.display = "flex";
 }
-
 function closePopup() {
   document.getElementById("popup").style.display = "none";
 }
