@@ -3,46 +3,79 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RekrutPro</title>
+<title>RekrutPro – Професійний рекрутинг</title>
 
 <style>
+/* ===== Загальні стилі ===== */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f5f5;
+  color: #111;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 header {
   background: #111827;
   color: white;
-  padding: 20px;
+  padding: 20px 0;
   text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
+header h1 {
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+}
+
+/* ===== Банер ===== */
 .hero {
-  background: url("https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg") center/cover;
-  height: 400px;
+  background: url("https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg") center/cover no-repeat;
+  height: 450px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 30px;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 
+/* ===== Секції ===== */
 .section {
-  padding: 40px;
+  padding: 60px 20px;
   text-align: center;
 }
 
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+/* ===== Послуги ===== */
 .services {
   display: flex;
-  gap: 20px;
+  flex-wrap: wrap;
   justify-content: center;
+  gap: 30px;
 }
 
 .card {
   width: 300px;
-  background: #fff;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
 }
 
 .card img {
@@ -51,14 +84,26 @@ header {
   object-fit: cover;
 }
 
-button {
-  background: #facc15;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
+.card h3 {
+  margin: 15px 0 10px 0;
 }
 
-/* POPUP */
+.card button {
+  background: #facc15;
+  border: none;
+  padding: 12px 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.card button:hover {
+  background: #eab308;
+}
+
+/* ===== Popup ===== */
 #popup {
   display: none;
   position: fixed;
@@ -69,12 +114,60 @@ button {
   background: rgba(0,0,0,0.7);
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 }
 
 .popup-box {
   background: white;
-  padding: 20px;
-  width: 300px;
+  padding: 30px;
+  width: 350px;
+  border-radius: 15px;
+  text-align: left;
+  position: relative;
+}
+
+.popup-box span {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* ===== Форми ===== */
+.popup-box input, .popup-box button {
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.popup-box button {
+  background: #facc15;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.popup-box button:hover {
+  background: #eab308;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: #111827;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  margin-top: 50px;
+}
+
+footer a {
+  color: #facc15;
+  margin: 0 10px;
 }
 
 </style>
@@ -87,43 +180,52 @@ button {
 </header>
 
 <div class="hero">
-  Професійний рекрутинг
+  Професійний рекрутинг та підбір персоналу
 </div>
 
 <div class="section">
   <h2>Наші послуги</h2>
 
   <div class="services">
-
     <div class="card">
-      <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg">
+      <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg" alt="Пошук персоналу">
       <h3>Пошук персоналу</h3>
       <button onclick="openPopup()">Замовити консультацію</button>
     </div>
 
     <div class="card">
-      <img src="https://images.pexels.com/photos/1181615/pexels-photo-1181615.jpeg">
+      <img src="https://images.pexels.com/photos/1181615/pexels-photo-1181615.jpeg" alt="IT рекрутинг">
       <h3>IT рекрутинг</h3>
+      <button onclick="openPopup()">Замовити консультацію</button>
+    </div>
+
+    <div class="card">
+      <img src="https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg" alt="Аутсорсинг HR">
+      <h3>Аутсорсинг HR</h3>
       <button onclick="openPopup()">Замовити консультацію</button>
     </div>
 
   </div>
 </div>
 
-<!-- POPUP -->
+<!-- POPUP ФОРМА -->
 <div id="popup">
   <div class="popup-box">
-    <span onclick="closePopup()" style="cursor:pointer;">X</span>
-    <h3>Заявка</h3>
-
+    <span onclick="closePopup()">×</span>
+    <h3>Заявка на консультацію</h3>
     <form action="https://formspree.io/f/xnjoaydg" method="POST">
-      <input type="text" name="name" placeholder="Ім'я" required style="width:100%; margin:5px 0;">
-      <input type="tel" name="phone" placeholder="Телефон" required style="width:100%; margin:5px 0;">
+      <input type="text" name="name" placeholder="Ім'я" required>
+      <input type="tel" name="phone" placeholder="Телефон" required>
       <button type="submit">Відправити</button>
     </form>
-
   </div>
 </div>
+
+<footer>
+  <p>&copy; 2026 RekrutPro</p>
+  <a href="mailto:your@email.com">Email</a>
+  <a href="https://facebook.com/yourpage" target="_blank">Facebook</a>
+</footer>
 
 <script>
 function openPopup() {
