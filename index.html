@@ -3,236 +3,161 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>RekrutPro – Професійний рекрутинг</title>
+<title>RekrutPro</title>
 
-<!-- Google Font -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-<!-- Font Awesome для іконок -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <style>
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f9f9f9;
-  color: #1f2937;
-  scroll-behavior: smooth;
 }
 
-/* Header */
 header {
   background: #111827;
-  padding: 20px 0;
+  padding: 20px;
   text-align: center;
-  position: sticky;
-  top: 0;
-  z-index: 100;
 }
+
 header h1 {
   font-family: 'Poppins', sans-serif;
   font-size: 3em;
-  background: linear-gradient(90deg, #facc15, #f59e0b);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
-  margin: 0;
-  animation: fadeIn 2s ease-out;
-}
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-}
-nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-nav ul li a:hover {
   color: #facc15;
+  margin: 0;
 }
 
-/* Hero */
 .hero {
-  height: 450px;
+  height: 400px;
   background: url("https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1400") no-repeat center/cover;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.section {
+  padding: 50px;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  width: 300px;
+  background: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card button {
+  background: #facc15;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+/* POPUP */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
   justify-content: center;
   align-items: center;
-  color: white;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.8);
-  text-align: center;
-  padding: 20px;
-  opacity: 0;
-  transform: translateY(50px);
-  animation: fadeInUp 1s forwards 0.5s;
 }
-.hero h2 { font-size: 3em; margin-bottom: 15px; }
-.hero p { font-size: 1.2em; max-width: 800px; }
 
-/* Sections */
-.section { padding: 60px 20px; text-align: center; opacity: 0; transform: translateY(50px); }
-.section h2 { font-size: 2.5em; margin-bottom: 40px; color: #111827; }
-
-/* Cards */
-.cards { display: flex; flex-wrap: wrap; justify-content: center; gap: 25px; }
-.card {
+.popup-content {
   background: white;
+  padding: 20px;
+  border-radius: 10px;
   width: 300px;
-  border-radius: 15px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  overflow: hidden;
-  transition: 0.5s;
-  opacity: 0;
-  transform: translateY(50px);
 }
-.card img { width: 100%; height: 200px; object-fit: cover; transition: 0.5s; }
-.card:hover img { transform: scale(1.1); }
-.card .content { padding: 20px; }
-.card h3 { margin: 10px 0; font-size: 1.4em; }
-.card p { font-size: 1em; color: #4b5563; }
-.card button {
-  padding: 10px 15px;
-  border: none;
-  border-radius: 8px;
-  background: #facc15;
+
+.popup-content input,
+.popup-content textarea {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.close {
+  float: right;
   cursor: pointer;
-  font-weight: bold;
-  transition: 0.3s;
 }
-.card button:hover { background: #eab308; }
-
-/* Contact form */
-.contact input, .contact textarea {
-  width: calc(100% - 24px);
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  margin-bottom: 15px;
-  font-size: 1em;
-}
-.contact button {
-  padding: 12px;
-  border: none;
-  border-radius: 8px;
-  background: #facc15;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.contact button:hover { background: #eab308; }
-
-/* Footer */
-footer { background: #111827; color: white; text-align: center; padding: 30px 20px; }
-footer a { color:#facc15; text-decoration:none; font-weight:bold; }
-footer a:hover { color:#eab308; }
-
-footer .contacts { display:flex; justify-content:center; gap:30px; flex-wrap:wrap; font-size:1.2em; margin-bottom:15px; }
-
-/* Media Queries */
-@media(max-width:800px) { .cards { flex-direction: column; align-items: center; } }
-
-/* Animations */
-@keyframes fadeIn { from {opacity:0; transform: translateY(-20px);} to {opacity:1; transform: translateY(0);} }
-@keyframes fadeInUp { to {opacity:1; transform: translateY(0);} }
 </style>
+
 </head>
 <body>
 
 <header>
   <h1>RekrutPro</h1>
-  <nav>
-    <ul>
-      <li><a href="#hero">Головна</a></li>
-      <li><a href="#services">Послуги</a></li>
-      <li><a href="#contact">Контакти</a></li>
-    </ul>
-  </nav>
 </header>
 
-<section class="hero" id="hero">
-  <h2>Професійний рекрутинг для вашого бізнесу</h2>
-  <p>Ми знаходимо найкращих кандидатів, щоб ваш бізнес ріс та процвітав.</p>
+<section class="hero">
+  <h2>Професійний рекрутинг</h2>
 </section>
 
-<section class="section" id="services">
+<section class="section">
   <h2>Наші послуги</h2>
+
   <div class="cards">
+
     <div class="card">
-      <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Executive Search">
-      <div class="content">
-        <h3>Executive Search</h3>
-        <p>Підбір найкращих топ‑менеджерів для вашої компанії.</p>
-        <button>Замовити консультацію</button>
-      </div>
+      <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg">
+      <h3>Executive Search</h3>
+      <button onclick="openPopup()">Замовити консультацію</button>
     </div>
 
     <div class="card">
-      <img src="https://images.pexels.com/photos/1181615/pexels-photo-1181615.jpeg?auto=compress&cs=tinysrgb&w=600" alt="IT рекрутинг">
-      <div class="content">
-        <h3>IT Рекрутинг</h3>
-        <p>Находимо талановитих ІТ‑спеціалістів для сучасних команд.</p>
-        <button>Замовити консультацію</button>
-      </div>
+      <img src="https://images.pexels.com/photos/1181615/pexels-photo-1181615.jpeg">
+      <h3>IT Рекрутинг</h3>
+      <button onclick="openPopup()">Замовити консультацію</button>
     </div>
 
-    <div class="card">
-      <img src="https://images.pexels.com/photos/3182755/pexels-photo-3182755.jpeg?auto=compress&cs=tinysrgb&w=600" alt="HR аутсорсинг">
-      <div class="content">
-        <h3>HR Аутсорсинг</h3>
-        <p>Підтримка HR‑процесів: адаптація, оцінка, супровід.</p>
-        <button>Замовити консультацію</button>
-      </div>
-    </div>
-
-    <div class="card">
-      <img src="https://images.pexels.com/photos/3184298/pexels-photo-3184298.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Консультації">
-      <div class="content">
-        <h3>Консультації</h3>
-        <p>Експертні поради щодо підбору персоналу та HR‑стратегій.</p>
-        <button>Замовити консультацію</button>
-      </div>
-    </div>
   </div>
 </section>
 
-<section class="section contact" id="contact">
-  <h2>Зв’яжіться з нами</h2>
-  <form action="https://formspree.io/f/xnjoaydg" method="POST">
-    <input type="text" name="name" placeholder="Ваше ім'я" required>
-    <input type="email" name="email" placeholder="Email" required>
-    <textarea name="message" placeholder="Ваше повідомлення" required></textarea>
-    <button type="submit">Відправити</button>
-  </form>
-</section>
+<!-- POPUP -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <span class="close" onclick="closePopup()">&times;</span>
+    <h3>Залиште заявку</h3>
 
-<footer>
-  <h3>Контакти RekrutPro</h3>
-  <div class="contacts">
-    <a href="tel:0938361697"><i class="fas fa-phone"></i> 0938361697</a>
-    <a href="mailto:info.recrutpro@gmail.com"><i class="fas fa-envelope"></i> info.recrutpro@gmail.com</a>
-    <a href="https://www.facebook.com/yourpage" target="_blank"><i class="fab fa-facebook"></i> Facebook</a>
+    <form action="https://formspree.io/f/xnjoaydg" method="POST">
+      <input type="text" name="name" placeholder="Ваше ім'я" required>
+      <input type="tel" name="phone" placeholder="Ваш телефон" required>
+      <textarea name="message" placeholder="Коментар"></textarea>
+      <button type="submit">Відправити</button>
+    </form>
+
   </div>
-  <p>&copy; 2026 RekrutPro – Всі права захищені</p>
-</footer>
+</div>
 
 <script>
-// Анімація появи карток та секцій при скролі
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.style.opacity = 1;
-      entry.target.style.transform = 'translateY(0)';
-    }
-  });
-},{ threshold: 0.2 });
+function openPopup() {
+  document.getElementById("popup").style.display = "flex";
+}
 
-document.querySelectorAll('.section, .card').forEach(el => observer.observe(el));
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
 </script>
 
 </body>
