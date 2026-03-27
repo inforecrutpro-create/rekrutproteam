@@ -5,8 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RekrutPro</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-
 <style>
 body {
   margin: 0;
@@ -15,45 +13,36 @@ body {
 
 header {
   background: #111827;
+  color: white;
   padding: 20px;
   text-align: center;
 }
 
-header h1 {
-  font-family: 'Poppins', sans-serif;
-  font-size: 3em;
-  color: #facc15;
-  margin: 0;
-}
-
 .hero {
+  background: url("https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg") center/cover;
   height: 400px;
-  background: url("https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg?auto=compress&cs=tinysrgb&w=1400") no-repeat center/cover;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   color: white;
-  text-align: center;
+  font-size: 30px;
 }
 
 .section {
-  padding: 50px;
+  padding: 40px;
   text-align: center;
 }
 
-.cards {
+.services {
   display: flex;
   gap: 20px;
   justify-content: center;
-  flex-wrap: wrap;
 }
 
 .card {
   width: 300px;
   background: #fff;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  border-radius: 10px;
-  overflow: hidden;
 }
 
 .card img {
@@ -62,88 +51,74 @@ header h1 {
   object-fit: cover;
 }
 
-.card button {
+button {
   background: #facc15;
   border: none;
   padding: 10px;
   cursor: pointer;
-  margin-top: 10px;
 }
 
 /* POPUP */
-.popup {
+#popup {
   display: none;
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
   background: rgba(0,0,0,0.7);
   justify-content: center;
   align-items: center;
 }
 
-.popup-content {
+.popup-box {
   background: white;
   padding: 20px;
-  border-radius: 10px;
   width: 300px;
 }
 
-.popup-content input,
-.popup-content textarea {
-  width: 100%;
-  margin: 10px 0;
-  padding: 10px;
-}
-
-.close {
-  float: right;
-  cursor: pointer;
-}
 </style>
-
 </head>
+
 <body>
 
 <header>
   <h1>RekrutPro</h1>
 </header>
 
-<section class="hero">
-  <h2>Професійний рекрутинг</h2>
-</section>
+<div class="hero">
+  Професійний рекрутинг
+</div>
 
-<section class="section">
+<div class="section">
   <h2>Наші послуги</h2>
 
-  <div class="cards">
+  <div class="services">
 
     <div class="card">
-      <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg">
-      <h3>Executive Search</h3>
+      <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg">
+      <h3>Пошук персоналу</h3>
       <button onclick="openPopup()">Замовити консультацію</button>
     </div>
 
     <div class="card">
       <img src="https://images.pexels.com/photos/1181615/pexels-photo-1181615.jpeg">
-      <h3>IT Рекрутинг</h3>
+      <h3>IT рекрутинг</h3>
       <button onclick="openPopup()">Замовити консультацію</button>
     </div>
 
   </div>
-</section>
+</div>
 
 <!-- POPUP -->
-<div id="popup" class="popup">
-  <div class="popup-content">
-    <span class="close" onclick="closePopup()">&times;</span>
-    <h3>Залиште заявку</h3>
+<div id="popup">
+  <div class="popup-box">
+    <span onclick="closePopup()" style="cursor:pointer;">X</span>
+    <h3>Заявка</h3>
 
     <form action="https://formspree.io/f/xnjoaydg" method="POST">
-      <input type="text" name="name" placeholder="Ваше ім'я" required>
-      <input type="tel" name="phone" placeholder="Ваш телефон" required>
-      <textarea name="message" placeholder="Коментар"></textarea>
+      <input type="text" name="name" placeholder="Ім'я" required style="width:100%; margin:5px 0;">
+      <input type="tel" name="phone" placeholder="Телефон" required style="width:100%; margin:5px 0;">
       <button type="submit">Відправити</button>
     </form>
 
