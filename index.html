@@ -4,202 +4,89 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RekrutPro Team – Професійний рекрутинг</title>
-  <meta name="google-site-verification" content="2Sk3vzw_XpeKOJSFi1EeoQ596B1paVFDFXVEC92yApY" />
-  <meta name="description" content="RekrutPro Team – професійний рекрутинг та підбір персоналу. IT рекрутинг, аутсорсинг HR та консультації для бізнесу.Ми пропонуємо індивідуальний підхід до кожного клієнта, глибоко аналізуємо потреби бізнесу 
-        та підбираємо кандидатів, які не тільки відповідають вимогам, а й ідеально вписуються 
-        в корпоративну культуру компанії.Ми працюємо швидко, якісно та з фокусом 
-        на результат, використовуючи сучасні інструменти пошуку та оцінки кандидатів.">
+<meta name="google-site-verification" content="2Sk3vzw_XpeKOJSFi1EeoQ596B1paVFDFXVEC92yApY" />
+<meta name="description" content="RekrutPro Team – професійний рекрутинг та підбір персоналу. IT рекрутинг, аутсорсинг HR та консультації для бізнесу.">
 <meta name="keywords" content="рекрутинг, підбір персоналу, IT рекрутинг, HR, консультації, RekrutPro Team">
-<meta name="author" content="RekrutPro Team Team">
+<meta name="author" content="RekrutPro Team">
 
 <style>
-/* ===== Загальні стилі ===== */
-body {
-  margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f5f5f5;
-  color: #111;
-}
+body { margin:0; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f5f5f5; color:#111;}
+a { text-decoration:none; color:inherit;}
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
+header { background:#111827; color:white; padding:20px 0; text-align:center; box-shadow:0 4px 10px rgba(0,0,0,0.3);}
+header h1 { font-size:2.5rem; letter-spacing:2px;}
 
-header {
-  background: #111827;
-  color: white;
-  padding: 20px 0;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-}
+nav ul { list-style:none; padding:0; display:flex; justify-content:center; margin-top:10px;}
+nav ul li { margin:0 15px;}
+nav ul li a { color:#facc15; font-weight:bold;}
 
-header h1 {
-  font-size: 2.5rem;
-  letter-spacing: 2px;
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-nav ul li {
-  margin: 0 15px;
-}
-
-nav ul li a {
-  color: #facc15;
-  font-weight: bold;
-}
-
-/* ===== Банер ===== */
 .hero {
-  background: url("https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg") center/cover no-repeat;
-  height: 450px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
-  font-size: 2.5rem;
-  font-weight: bold;
+  background:url("https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg") center/cover no-repeat;
+  height:450px; display:flex; justify-content:center; align-items:center;
+  color:white; text-shadow:2px 2px 8px rgba(0,0,0,0.7);
+  font-size:2.5rem; font-weight:bold;
 }
 
-/* ===== Секції ===== */
-.section {
-  padding: 60px 20px;
-  text-align: center;
-}
+.section { padding:60px 20px; text-align:center;}
+.section h2 { font-size:2rem; margin-bottom:40px;}
 
-.section h2 {
-  font-size: 2rem;
-  margin-bottom: 40px;
-}
-
-/* ===== Послуги ===== */
-.services {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-}
+.services { display:flex; flex-wrap:wrap; justify-content:center; gap:30px;}
 
 .card {
-  width: 300px;
-  background: white;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  transition: transform 0.3s, box-shadow 0.3s;
+  width:300px; background:white; border-radius:15px;
+  overflow:hidden; box-shadow:0 8px 20px rgba(0,0,0,0.2);
+  transition:transform 0.3s, box-shadow 0.3s;
 }
 
-.card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
-}
-
-.card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-
-.card h3 {
-  margin: 15px 0 10px 0;
-}
+.card:hover { transform:translateY(-10px); box-shadow:0 12px 30px rgba(0,0,0,0.3);}
+.card img { width:100%; height:200px; object-fit:cover;}
+.card h3 { margin:15px 0 10px 0;}
 
 .card button {
-  background: #facc15;
-  border: none;
-  padding: 12px 20px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s;
+  background:#facc15; border:none; padding:12px 20px;
+  margin-bottom:15px; border-radius:8px; cursor:pointer;
+  font-weight:bold; transition:background 0.3s;
 }
 
-.card button:hover {
-  background: #eab308;
-}
+.card button:hover { background:#eab308;}
 
-/* ===== POPUP ===== */
 #popup {
-  display: none;
-  position: fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background: rgba(0,0,0,0.7);
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+  display:none; position:fixed; top:0; left:0;
+  width:100%; height:100%; background:rgba(0,0,0,0.7);
+  justify-content:center; align-items:center; z-index:1000;
 }
 
 .popup-box {
-  background: white;
-  padding: 30px;
-  width: 350px;
-  border-radius: 15px;
-  text-align: left;
-  position: relative;
+  background:white; padding:30px; width:350px;
+  border-radius:15px; text-align:left; position:relative;
 }
 
 .popup-box span {
-  position: absolute;
-  top: 10px;
-  right: 15px;
-  cursor: pointer;
-  font-size: 1.5rem;
-  font-weight: bold;
+  position:absolute; top:10px; right:15px;
+  cursor:pointer; font-size:1.5rem; font-weight:bold;
 }
 
-/* ===== Форми ===== */
 .popup-box input, .popup-box button {
-  width: 100%;
-  margin: 10px 0;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
+  width:100%; margin:10px 0; padding:12px;
+  border-radius:8px; border:1px solid #ccc;
 }
 
-.popup-box button {
-  background: #facc15;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-}
+.popup-box button { background:#facc15; border:none; font-weight:bold;}
+.popup-box button:hover { background:#eab308;}
 
-.popup-box button:hover {
-  background: #eab308;
-}
-
-/* ===== Footer ===== */
 footer {
-  background: #111827;
-  color: white;
-  padding: 20px 0;
-  text-align: center;
-  margin-top: 50px;
+  background:#111827; color:white;
+  padding:20px 0; text-align:center; margin-top:50px;
 }
 
-footer a {
-  color: #facc15;
-  margin: 0 10px;
-}
+footer a { color:#facc15; margin:0 10px;}
 </style>
 </head>
 
 <body>
 
 <header>
-  <h1>RekrutProTeam</h1>
+  <h1>RekrutPro Team</h1>
   <nav>
     <ul>
       <li><a href="#home">Головна</a></li>
@@ -216,30 +103,47 @@ footer a {
 
 <div id="about" class="section">
   <h2>Про нас</h2>
-  <p>Команда RekrutPro має досвід у рекрутингу та підборі персоналу. Ми допомагаємо бізнесу знаходити талановитих фахівців та оптимізувати HR-процеси.</p>
+  <p>Команда RekrutPro Team професійний рекрутинг та підбір персоналу. IT рекрутинг, аутсорсинг HR та консультації для бізнесу.</p>
+</div>
+
+<!-- ЧОМУ ОБИРАЮТЬ НАС -->
+<div class="section">
+  <h2>Чому обирають RekrutPro Team</h2>
+
+  <div class="services">
+
+    <div class="card">
+      <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg">
+      <h3>Швидкий результат</h3>
+      <p>Ми оперативно закриваємо вакансії.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg">
+      <h3>Якість кандидатів</h3>
+      <p>Ретельно відбираємо кандидатів.</p>
+    </div>
+
+    <div class="card">
+      <img src="https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg">
+      <h3>Індивідуальний підхід</h3>
+      <p>Працюємо під кожного клієнта.</p>
+    </div>
+
+  </div>
 </div>
 
 <div id="services" class="section">
   <h2>Наші послуги</h2>
   <div class="services">
     <div class="card">
-      <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg" alt="Пошук персоналу">
+      <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg">
       <h3>Пошук персоналу</h3>
       <button onclick="openPopup()">Замовити консультацію</button>
     </div>
     <div class="card">
-      <img src="https://images.pexels.com/photos/1181615/pexels-photo-1181615.jpeg" alt="IT рекрутинг">
+      <img src="https://images.pexels.com/photos/1181615/pexels-photo-1181615.jpeg">
       <h3>IT рекрутинг</h3>
-      <button onclick="openPopup()">Замовити консультацію</button>
-    </div>
-    <div class="card">
-      <img src="https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg" alt="Аутсорсинг HR">
-      <h3>Аутсорсинг HR</h3>
-      <button onclick="openPopup()">Замовити консультацію</button>
-    </div>
-    <div class="card">
-      <img src="https://images.pexels.com/photos/3184468/pexels-photo-3184468.jpeg" alt="Консультації">
-      <h3>HR Консультації</h3>
       <button onclick="openPopup()">Замовити консультацію</button>
     </div>
   </div>
@@ -249,14 +153,12 @@ footer a {
   <h2>Контакти</h2>
   <p>Email: <a href="mailto:info.recrutpro@gmail.com">info.recrutpro@gmail.com</a></p>
   <p>Телефон: <a href="tel:0938361697">0938361697</a></p>
-  <p>Facebook: <a href="https://www.facebook.com/profile.php?id=61577435187839" target="_blank">Facebook</a></p>
 </div>
 
-<!-- POPUP -->
 <div id="popup">
   <div class="popup-box">
     <span onclick="closePopup()">×</span>
-    <h3>Заявка на консультацію</h3>
+    <h3>Заявка</h3>
     <form action="https://formspree.io/f/xnjoaydg" method="POST">
       <input type="text" name="name" placeholder="Ім'я" required>
       <input type="tel" name="phone" placeholder="Телефон" required>
@@ -269,16 +171,11 @@ footer a {
   <p>&copy; 2026 RekrutPro Team</p>
   <a href="mailto:info.recrutpro@gmail.com">Email</a>
   <a href="tel:0938361697">Телефон</a>
-  <a href="https://www.facebook.com/profile.php?id=61577435187839" target="_blank">Facebook</a>
 </footer>
 
 <script>
-function openPopup() {
-  document.getElementById("popup").style.display = "flex";
-}
-function closePopup() {
-  document.getElementById("popup").style.display = "none";
-}
+function openPopup(){document.getElementById("popup").style.display="flex";}
+function closePopup(){document.getElementById("popup").style.display="none";}
 </script>
 
 </body>
