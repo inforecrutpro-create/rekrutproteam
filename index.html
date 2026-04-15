@@ -4,46 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>RekrutPro Team | Рекрутингова компанія в Україні | Підбір персоналу</title>
+<title>RekrutPro Team | Рекрутингова компанія Україна</title>
 
-<meta name="description" content="RekrutPro Team — професійна рекрутингова компанія. Підбір персоналу, IT рекрутинг, HR аутсорсинг.">
-<meta name="keywords" content="рекрутинг, підбір персоналу, HR, IT рекрутинг, Україна">
+<meta name="description" content="RekrutPro Team — рекрутингова компанія. Підбір персоналу, IT рекрутинг, HR послуги.">
 
 <style>
-body {margin:0;font-family:Arial;background:#f4f4f4;}
-header {background:#0f172a;color:white;padding:20px;text-align:center;}
-nav a {margin:0 15px;color:#facc15;font-weight:bold;}
-.hero {
- background:url('https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg') center/cover;
- height:400px;color:white;display:flex;justify-content:center;align-items:center;
- font-size:2rem;text-align:center;
+body{margin:0;font-family:Arial;background:#f5f5f5;}
+header{background:#0f172a;color:white;padding:20px;text-align:center;}
+nav a{color:#facc15;margin:0 10px;text-decoration:none;font-weight:bold;}
+.hero{
+background:#111827;color:white;padding:80px 20px;text-align:center;
 }
-.section {padding:50px 20px;text-align:center;}
-.cards {display:flex;flex-wrap:wrap;justify-content:center;gap:20px;}
-.card {
- width:280px;background:white;border-radius:12px;
- box-shadow:0 6px 15px rgba(0,0,0,0.2);overflow:hidden;
-}
-.card img {width:100%;height:180px;object-fit:cover;}
-.card h3 {margin:10px;}
-.card button {
- background:#facc15;border:none;padding:10px 15px;margin:10px;
- cursor:pointer;font-weight:bold;border-radius:6px;
-}
-.card button:hover {background:#eab308;}
-
-footer {background:#0f172a;color:white;text-align:center;padding:20px;}
-
-#popup {
- display:none;position:fixed;top:0;left:0;width:100%;height:100%;
- background:rgba(0,0,0,0.7);justify-content:center;align-items:center;
-}
-.popup-box {
- background:white;padding:25px;border-radius:10px;width:300px;
-}
-.popup-box input, .popup-box button {
- width:100%;margin:10px 0;padding:10px;
-}
+.section{padding:50px 20px;text-align:center;}
+.card{background:white;padding:20px;margin:10px;border-radius:10px;display:inline-block;width:250px;}
+.btn{background:#facc15;padding:10px 15px;display:inline-block;margin-top:10px;border-radius:6px;}
+footer{background:#0f172a;color:white;text-align:center;padding:20px;}
 </style>
 </head>
 
@@ -52,118 +27,35 @@ footer {background:#0f172a;color:white;text-align:center;padding:20px;}
 <header>
 <h1>RekrutPro Team</h1>
 <nav>
-<a href="#about">Про нас</a>
-<a href="#services">Послуги</a>
-<a href="#why">Чому ми</a>
-<a href="#contact">Контакти</a>
+<a href="index.html">Головна</a>
+<a href="about.html">Про компанію</a>
+<a href="services.html">Послуги</a>
+<a href="jobs.html">Вакансії</a>
 </nav>
 </header>
 
 <div class="hero">
-Рекрутингова компанія в Україні — підбір персоналу для бізнесу
+<h1>Рекрутингова компанія в Україні</h1>
+<p>Підбір персоналу, IT рекрутинг, HR рішення для бізнесу</p>
+<a class="btn" href="jobs.html">Переглянути вакансії</a>
 </div>
 
-<h1 style="text-align:center;margin-top:30px;">
-RekrutPro Team — професійний підбір персоналу
-</h1>
-
-<div id="about" class="section">
-<h2>Про компанію</h2>
+<div class="section">
+<h2>Про нас</h2>
 <p>
-RekrutPro Team — рекрутингова компанія в Україні, що спеціалізується на підборі персоналу, IT рекрутингу та HR аутсорсингу.
-Ми допомагаємо бізнесу швидко знаходити кваліфікованих працівників.
-</p>
-<p>
-Ми працюємо з компаніями по всій Україні та Європі. Наш досвід дозволяє ефективно закривати вакансії різної складності.
+RekrutPro Team — HR та рекрутингова компанія, що допомагає бізнесу знаходити кваліфікований персонал.
+Ми працюємо з українськими компаніями.
 </p>
 </div>
 
-<div id="services" class="section">
-<h2>Наші послуги</h2>
-
-<div class="cards">
-
-<div class="card">
-<img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg" alt="підбір персоналу">
-<h3>Підбір персоналу</h3>
-<button onclick="openPopup()">Замовити консультацію</button>
-</div>
-
-<div class="card">
-<img src="https://images.pexels.com/photos/1181615/pexels-photo-1181615.jpeg" alt="IT рекрутинг">
-<h3>IT рекрутинг</h3>
-<button onclick="openPopup()">Замовити консультацію</button>
-</div>
-
-<div class="card">
-<img src="https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg" alt="HR аутсорсинг">
-<h3>HR аутсорсинг</h3>
-<button onclick="openPopup()">Замовити консультацію</button>
-</div>
-
-</div>
-</div>
-
-<div id="why" class="section">
-<h2>Чому обирають нас</h2>
-
-<div class="cards">
-
-<div class="card">
-<img src="https://images.pexels.com/photos/3184468/pexels-photo-3184468.jpeg" alt="досвід">
-<h3>Досвід</h3>
-<p>Багаторічний досвід у рекрутингу.</p>
-</div>
-
-<div class="card">
-<img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg" alt="якість">
-<h3>Якість</h3>
-<p>Перевірені кандидати.</p>
-</div>
-
-<div class="card">
-<img src="https://images.pexels.com/photos/1181615/pexels-photo-1181615.jpeg" alt="швидкість">
-<h3>Швидкість</h3>
-<p>Швидке закриття вакансій.</p>
-</div>
-
-</div>
-</div>
-
-<div id="contact" class="section">
+<div class="section">
 <h2>Контакти</h2>
 <p>Email: info.recrutpro@gmail.com</p>
 <p>Телефон: 0938361697</p>
-<p>Адреса: Україна, м. Київ</p>
+<p>Адреса: Україна, Київ</p>
 </div>
 
-<footer>
-<p>© 2026 RekrutPro Team</p>
-</footer>
-
-<!-- POPUP -->
-<div id="popup">
-<div class="popup-box">
-<h3>Заявка на консультацію</h3>
-<input type="text" placeholder="Ім'я">
-<input type="tel" placeholder="Телефон">
-<button onclick="sendForm()">Відправити</button>
-<button onclick="closePopup()">Закрити</button>
-</div>
-</div>
-
-<script>
-function openPopup(){
- document.getElementById("popup").style.display="flex";
-}
-function closePopup(){
- document.getElementById("popup").style.display="none";
-}
-function sendForm(){
- alert("Заявка відправлена!");
- closePopup();
-}
-</script>
+<footer>© 2026 RekrutPro Team</footer>
 
 </body>
 </html>
