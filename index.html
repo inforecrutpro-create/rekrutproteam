@@ -9,8 +9,13 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial;}
 
-body{background:#0b1220;color:white;}
+body{
+background:#0b1220;
+color:white;
+scroll-behavior:smooth;
+}
 
+/* HEADER */
 header{
 display:flex;
 justify-content:space-between;
@@ -19,6 +24,7 @@ padding:20px 50px;
 background:#111827;
 position:sticky;
 top:0;
+z-index:1000;
 }
 
 header h1{color:#facc15;}
@@ -27,51 +33,75 @@ nav a{
 color:white;
 margin:0 10px;
 text-decoration:none;
+transition:0.3s;
 }
 
+nav a:hover{color:#facc15;}
+
+/* HERO */
 .hero{
-height:80vh;
+height:90vh;
 background:url("https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg") center/cover;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
+position:relative;
+}
+
+.hero::after{
+content:"";
+position:absolute;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.6);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
 }
 
 .hero h1{
 font-size:3rem;
-background:rgba(0,0,0,0.6);
-padding:10px 20px;
-border-radius:10px;
+animation:fadeIn 2s ease;
 }
 
 .hero p{
-margin-top:15px;
+margin-top:10px;
 font-size:1.2rem;
+color:#ddd;
 }
 
 .btn{
 margin-top:20px;
-padding:12px 20px;
+padding:12px 25px;
 background:#facc15;
 color:black;
 border:none;
 border-radius:8px;
 cursor:pointer;
 font-weight:bold;
+transition:0.3s;
 }
 
+.btn:hover{
+transform:scale(1.05);
+}
+
+/* SECTIONS */
 .section{
 padding:80px 50px;
 text-align:center;
 }
 
 .section h2{
-margin-bottom:40px;
 font-size:2rem;
+margin-bottom:40px;
 }
 
+/* CARDS */
 .cards{
 display:flex;
 flex-wrap:wrap;
@@ -85,10 +115,12 @@ width:300px;
 border-radius:12px;
 overflow:hidden;
 transition:0.3s;
+cursor:pointer;
 }
 
 .card:hover{
-transform:scale(1.05);
+transform:translateY(-10px);
+box-shadow:0 10px 20px rgba(0,0,0,0.5);
 }
 
 .card img{
@@ -98,8 +130,8 @@ object-fit:cover;
 }
 
 .card h3{
-padding:10px;
 color:#facc15;
+padding:10px;
 }
 
 .card p{
@@ -107,16 +139,56 @@ padding:0 10px 15px;
 color:#ccc;
 }
 
-.contact{
-background:#111827;
-padding:50px;
-text-align:center;
+/* POPUP */
+.popup{
+position:fixed;
+top:0;left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.7);
+display:none;
+justify-content:center;
+align-items:center;
 }
 
-footer{
+.popup-box{
+background:white;
+color:black;
 padding:20px;
-text-align:center;
+border-radius:10px;
+width:300px;
+animation:pop 0.3s ease;
+}
+
+.popup-box input{
+width:100%;
+padding:10px;
+margin:10px 0;
+}
+
+.close{
+float:right;
+cursor:pointer;
+font-size:20px;
+}
+
+/* FOOTER */
+footer{
 background:#000;
+text-align:center;
+padding:20px;
+margin-top:50px;
+}
+
+/* ANIMATION */
+@keyframes fadeIn{
+from{opacity:0;transform:translateY(20px);}
+to{opacity:1;transform:translateY(0);}
+}
+
+@keyframes pop{
+from{transform:scale(0.5);}
+to{transform:scale(1);}
 }
 </style>
 </head>
@@ -126,7 +198,6 @@ background:#000;
 <header>
 <h1>RekrutPro</h1>
 <nav>
-<a href="#home">Головна</a>
 <a href="#about">Про нас</a>
 <a href="#services">Послуги</a>
 <a href="#contact">Контакти</a>
@@ -134,18 +205,20 @@ background:#000;
 </header>
 
 <!-- HERO -->
-<div class="hero" id="home">
-<h1>Сучасний рекрутинг та підбір персоналу</h1>
-<p>Ми допомагаємо бізнесу знаходити найкращих працівників</p>
-<button class="btn">Замовити консультацію</button>
+<div class="hero">
+<div class="hero-content">
+<h1>Рекрутинг нового рівня</h1>
+<p>Ми знаходимо найкращих працівників для вашого бізнесу</p>
+<button class="btn" onclick="openPopup()">Замовити консультацію</button>
+</div>
 </div>
 
 <!-- ABOUT -->
 <div class="section" id="about">
 <h2>Про нас</h2>
 <p>
-RekrutPro Team — сучасна рекрутингова компанія, що працює з бізнесом в Україні та Європі.
-Ми підбираємо персонал швидко, якісно та професійно.
+RekrutPro Team — сучасна рекрутингова компанія, що працює в Україні та Європі.
+Ми підбираємо персонал швидко та професійно.
 </p>
 </div>
 
@@ -155,41 +228,60 @@ RekrutPro Team — сучасна рекрутингова компанія, щ�
 
 <div class="cards">
 
-<div class="card">
+<div class="card" onclick="openPopup()">
 <img src="https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg">
 <h3>Підбір персоналу</h3>
-<p>Швидкий та якісний підбір кандидатів.</p>
+<p>Швидке закриття вакансій</p>
 </div>
 
-<div class="card">
+<div class="card" onclick="openPopup()">
 <img src="https://images.pexels.com/photos/1181615/pexels-photo-1181615.jpeg">
 <h3>IT рекрутинг</h3>
-<p>Знаходимо топ IT спеціалістів.</p>
+<p>Топ IT спеціалісти</p>
 </div>
 
-<div class="card">
+<div class="card" onclick="openPopup()">
 <img src="https://images.pexels.com/photos/3184460/pexels-photo-3184460.jpeg">
 <h3>HR консалтинг</h3>
-<p>Допомагаємо бізнесу будувати HR процеси.</p>
+<p>Оптимізація HR процесів</p>
 </div>
 
 </div>
 </div>
 
 <!-- CONTACT -->
-<div class="contact" id="contact">
+<div class="section" id="contact">
 <h2>Контакти</h2>
 <p>Email: info.recrutpro@gmail.com</p>
 <p>Телефон: 0938361697</p>
 
-<button class="btn" onclick="alert('Ми звʼяжемось з вами!')">
-Замовити консультацію
-</button>
+<button class="btn" onclick="openPopup()">Написати нам</button>
+</div>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+<div class="popup-box">
+<span class="close" onclick="closePopup()">✖</span>
+<h3>Заявка</h3>
+<input type="text" placeholder="Ім'я">
+<input type="tel" placeholder="Телефон">
+<button class="btn" onclick="alert('Заявку відправлено!')">Відправити</button>
+</div>
 </div>
 
 <footer>
 © 2026 RekrutPro Team
 </footer>
+
+<script>
+function openPopup(){
+document.getElementById("popup").style.display="flex";
+}
+
+function closePopup(){
+document.getElementById("popup").style.display="none";
+}
+</script>
 
 </body>
 </html>
